@@ -1,14 +1,22 @@
 <?php
-$row = 1;
-if (($handle = fopen("tasks.csv", "r")) !== FALSE) {
-    while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
-        $num = count($data);
-        echo "<p> $num fields in line $row: <br /></p>\n";
-        $row++;
-        for ($c=0; $c < $num; $c++) {
-            echo $data[$c] . "<br />\n";
+
+function read_csv_file($filename)
+{
+        $row = 1;
+        if (($handle = fopen($filename, "r")) !== FALSE) {   // this line opens a file and returns a resource
+            while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {  // the handle is the resource that was opened by fopen
+                // There should be 4 fields
+                print "Description: " . $data[0] . '<br>';
+                print "Completed: " . $data[1] . '<br>';
+                print "Date created: " . $data[2] . '<br>';
+                print "Date completed: " . $data[3] . '<br>';
+                print "---------------<br>";
+                $row++;
+            }
+            fclose($handle);
         }
-    }
-    fclose($handle);
 }
+
+read_csv_file('tasks.csv');
+
 ?>
