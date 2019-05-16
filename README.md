@@ -6,4 +6,4 @@ Call the function from within the file **index.php** in this project repository,
 
 Hint, look at the function **display_csv_file** in the file
 called **task_functions.php**, the function that you will write will be called *display_tasks*.  It is very 
-similar to the display_csv_file function except that the $tasks array has already been provided.
+similar to the display_csv_file function except that the $tasks array is provided as a parameter to the function.
