@@ -1,6 +1,6 @@
 <?php
 
-function read_csv_file($filename)
+function display_csv_file($filename)
 {
         $row = 1;
         if (($handle = fopen($filename, "r")) !== FALSE) {   // this line opens a file and returns a resource
@@ -17,6 +17,5 @@ function read_csv_file($filename)
         }
 }
 
-read_csv_file('tasks.csv');
 
 ?>
